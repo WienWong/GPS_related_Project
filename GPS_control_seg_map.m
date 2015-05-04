@@ -16,16 +16,18 @@
 clc;close all;
 
 x11=360-104.5; y11=38.8;                  % Schriever Air Force Base
-plot(x11,y11,'dg','LineWidth',2);
+plot(x11,y11,'sr','MarkerSize',10); 
 hold on;
-plot(x11,y11,'pr','LineWidth',2);
+x33=360-120.6; y33=34.7;                  % Vandenberg AFB California 
+plot(x33,y33,'sm'); 
+plot(x11,y11,'dg'); 
 
 x21=72.4; y21=-7.3;                       % Diego Garcia
 plot(x21,y21,'*y');
-plot(x21,y21,'dg','LineWidth',2);
+plot(x21,y21,'dg');
 
 x12=360-157.8; y12=21.3;                  % Hawaii
-plot(x12,y12,'dg','LineWidth',2);
+plot(x12,y12,'dg');
 
 load('topo.mat','topo','topomap1');
 contour(0:359,-89:90,topo,[0 0],'b');
@@ -40,18 +42,19 @@ xlabel('Longitude');ylabel('Latitude');
 title('Initial GPS control segment map');
 
 x22=360-80.6; y22=28.5;                   % Cape Canaveral
-plot(x22,y22,'dg','LineWidth',2);
+plot(x22,y22,'dg');
 plot(x22,y22,'*y');
 
 x31=167.7; y31=8.7;                       % Kwajalein
-plot(x31,y31,'dg','LineWidth',2);
+plot(x31,y31,'dg');
 plot(x31,y31,'*y');
 
 x32=360-14.3; y32=-7.6;                   % Ascension Island
-plot(x32,y32,'dg','LineWidth',2);
+plot(x32,y32,'dg');
 plot(x32,y32,'*y');
 
-x33=360-120.6; y33=34.7;                  % Vandenberg AFB California
-plot(x33,y33,'pm','LineWidth',2);
-legend('Monitor Station','Master Control Station',...
-    'Ground Antenna','Location','SouthEast');
+
+legend('Master Control Station','alternate Master Control Station',...
+    'Monitor Station','Ground Antenna','Location','SouthEast');
+
+
